@@ -1,6 +1,6 @@
 <?php
 // views/layout/sidebar.php
-require_once __DIR__ . '/../controllers/ProductController.php';
+require_once __DIR__ . '/../../controllers/ProductController.php';
 
 $controller = new ProductController();
 $categories = $controller->getAllCategories();
