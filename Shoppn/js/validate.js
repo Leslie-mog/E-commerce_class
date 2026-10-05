@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^[0-9+\-\s]{7,15}$/;
-    const passwordRegex = /^(?=.*\d).{8,}$/;   // min 8 chars + at least 1 digit
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9\s]).{8,}$/;
 
     // login-form validation
     const loginForm = document.getElementById('login-form');
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ok = false;
         }
         if (!passwordRegex.test(password)) {
-            showError('password-error', 'Min 8 characters with at least one digit.');
+            showError('password-error', 'Use 8+ characters with uppercase and lowercase letters, a number, and a special character.');
             ok = false;
         }
         if (password !== confirm) {

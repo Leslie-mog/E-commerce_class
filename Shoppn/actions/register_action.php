@@ -29,8 +29,8 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 if (strlen($email) > 50) {           // matches customer_email VARCHAR(50)
     $errors[] = 'Email must be 50 characters or fewer.';
 }
-if (strlen($pass) < 8 || !preg_match('/\d/', $pass)) {
-    $errors[] = 'Password must be at least 8 characters and contain a digit.';
+if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9\s]).{8,}$/', $pass)) {
+    $errors[] = 'Password must be 8+ characters and include uppercase and lowercase letters, a number, and a special character.';
 }
 if ($pass !== $confirm) {
     $errors[] = 'Passwords do not match.';

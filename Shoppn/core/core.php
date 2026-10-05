@@ -12,21 +12,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 if (!defined('BASE_URL')) {
-    $app_root = realpath(__DIR__ . '/..');
-    $script_file = realpath($_SERVER['SCRIPT_FILENAME'] ?? '');
-    $script_name = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
-
-    if ($app_root !== false && $script_file !== false && strpos($script_file, $app_root . DIRECTORY_SEPARATOR) === 0) {
-        $relative_script = str_replace(DIRECTORY_SEPARATOR, '/', substr($script_file, strlen($app_root) + 1));
-        $script_suffix = '/' . $relative_script;
-        $base_url = substr($script_name, -strlen($script_suffix)) === $script_suffix
-            ? substr($script_name, 0, -strlen($script_suffix))
-            : '';
-    } else {
-        $base_url = '';
-    }
-
-    define('BASE_URL', rtrim($base_url, '/'));
+    define('BASE_URL', '/Shoppn');
 }
 // --- Timezone ---
 date_default_timezone_set('Africa/Accra');   // adjust to your region
@@ -49,6 +35,10 @@ function get_ip(): string
     }
     return $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
 }
+if (!defined('BASE_URL')) {
+    define('BASE_URL', '/shoppn');   // adjust if your folder name differs
+}
+
 function redirect(string $url): void
 {
     header('Location: ' . $url);
