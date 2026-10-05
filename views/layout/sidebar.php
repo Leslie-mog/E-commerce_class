@@ -1,10 +1,11 @@
 <?php
 // views/layout/sidebar.php
-require_once __DIR__ . '/../../controllers/ProductController.php';
+if (is_logged_in()):
+    require_once __DIR__ . '/../../controllers/ProductController.php';
 
-$controller = new ProductController();
-$categories = $controller->getAllCategories();
-$brands = $controller->getAllBrands();
+    $controller = new ProductController();
+    $categories = $controller->getAllCategories();
+    $brands = $controller->getAllBrands();
 ?>
 <aside class="sidebar">
     <h3>Categories</h3>
@@ -29,3 +30,4 @@ $brands = $controller->getAllBrands();
         <?php endif; ?>
     </ul>
 </aside>
+<?php endif; ?>
