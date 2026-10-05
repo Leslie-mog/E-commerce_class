@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(mysql -h localhost -u root -e \"USE shoppn; SELECT customer_id, customer_name, customer_email, user_role FROM customer LIMIT 10;\")",
+      "Bash(php -r ' *)",
+      "Bash(find /Applications/XAMPP -name \"php\" -type f 2>/dev/null | head -5)",
+      "Bash(/Applications/XAMPP/bin/php -r ' *)",
+      "Bash(git commit *)"
     ]
   }
 }

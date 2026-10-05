@@ -32,10 +32,9 @@ if (!defined('BASE_URL')) {
                 <li><a href="<?= BASE_URL ?>/index.php">Home</a></li>
 
                 <?php if (is_admin()): ?>
-                    <li><a href="<?= BASE_URL ?>/views/admin/dashboard.php">Dashboard</a></li>
-                    <li><a href="<?= BASE_URL ?>/views/admin/brand.php">Brands</a></li>
-                    <li><a href="<?= BASE_URL ?>/views/admin/category.php">Categories</a></li>
-                    <li><a href="<?= BASE_URL ?>/views/admin/product.php">Products</a></li>
+                    <li><a href="<?= BASE_URL ?>/views/admin/brand.php">Manage Brands</a></li>
+                    <li><a href="<?= BASE_URL ?>/views/admin/category.php">Manage Categories</a></li>
+                    <li><a href="<?= BASE_URL ?>/views/admin/product.php">Manage Products</a></li>
                 <?php endif; ?>
 
                 <?php if (is_logged_in()): ?>

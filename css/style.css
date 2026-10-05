@@ -51,6 +51,32 @@ body {
     flex: 0 0 200px;
 }
 
+.sidebar h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar li {
+    padding: 0.5rem 0;
+}
+
+.sidebar li a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.sidebar li a:hover {
+    text-decoration: underline;
+}
+
 .main-content {
     flex: 1;
 }
