@@ -1,0 +1,4 @@
+.DS_Store
+**/.DS_Store
+/core/db_cred.php
+/error/*.log
