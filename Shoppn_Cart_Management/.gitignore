@@ -1,0 +1,7 @@
+core/db_cred.php
+.DS_Store
+error/error.log
+*.log
+.env
+.env.local
+settings.local.json
